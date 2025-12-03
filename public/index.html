@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASTA</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <div>
+          <p class="eyebrow">ASTA</p>
+          <h1>ASTA</h1>
+          <p class="subtitle">Chat minimalis dengan jawaban ringkas.</p>
+        </div>
+        <div class="status">
+          <span class="dot"></span>
+          <span>Online</span>
+        </div>
+      </header>
+
+      <section class="chat" id="chat" aria-live="polite"></section>
+
+      <form id="chat-form" class="composer" autocomplete="off">
+        <label for="message" class="sr-only">Pesan</label>
+        <textarea id="message" name="message" placeholder="Tulis pesanmu di sini..." rows="3" required></textarea>
+        <div class="composer__actions">
+          <small id="helper">Shift + Enter untuk baris baru</small>
+          <button type="submit" id="send-btn">
+            <span class="idle">Kirim</span>
+            <span class="loading">
+              <span class="spinner" aria-hidden="true"></span>
+              Menyusun...
+            </span>
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <template id="bubble-template">
+      <article class="bubble">
+        <div class="meta">
+          <span class="role"></span>
+          <span class="time"></span>
+        </div>
+        <p class="content"></p>
+      </article>
+    </template>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
